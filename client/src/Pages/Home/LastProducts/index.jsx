@@ -22,12 +22,15 @@ export default function LastProducts() {
             try {
                 const res = await fetch(import.meta.env.VITE_BASE_API + 'product?sort=-createdAt&limit=9')
                 const data = await res.json()
+                console.log(data);
                 setProduct(data.data)
             } catch (error) {
+                console.log(error);
                 notify('error', 'something went wrong')
             }
         })()
     }, []);
+    console.log(product);
     const items = product?.map((e, index) =>
     
         <SwiperSlide style={{height:'500px'}}  key={index}> 
@@ -55,9 +58,9 @@ export default function LastProducts() {
         <>
         <Box borderRadius={'25px'}  px={'20px'} sx={{backgroundColor:'#D7D8DC'}} my={'40px'} mx={'2%'}>
             <Box py={'20px'}>
-                <Typography  bgcolor={'transparent'} variant='h3' component='body' >Last Products</Typography>
+                <Typography  bgcolor={'transparent'} variant='h3'  >Last Products</Typography>
             </Box>
-            <Swiper
+            {items &&<Swiper
                 slidesPerView={4}
                 spaceBetween={30}
                 pagination={{
@@ -69,7 +72,8 @@ export default function LastProducts() {
             >
                 {items}
 
-            </Swiper>
+            </Swiper>}
+            
             </Box>
         </>
 

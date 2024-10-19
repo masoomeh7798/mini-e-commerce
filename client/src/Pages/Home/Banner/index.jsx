@@ -31,6 +31,7 @@ export default function Banner() {
   console.log(items);
   console.log(sliders);
   return (
+    <>
     <Box sx={{ width: "100%", height: "80vh" }}>
       {items &&  <Swiper
         slidesPerView={1}
@@ -49,5 +50,6 @@ export default function Banner() {
       </Swiper>}
     
     </Box>
+    </>
   );
 }
