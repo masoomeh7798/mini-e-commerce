@@ -147,7 +147,7 @@ export default function Navbar() {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: 'white', display: 'block' }}
             >
-              <Link to={'/products'}>
+              <Link to={'/products/all/all-products'}>
                 <Typography variant='a' component='p' sx={{ color: 'white' }}>Products</Typography>
               </Link>
             </Button>

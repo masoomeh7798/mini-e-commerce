@@ -26,7 +26,7 @@ export default function App() {
       <Route exact path='/' element={<Home/>}/>
       <Route path='/about' element={<About/>}/>
       <Route path='/auth' element={token?<Navigate to={'/'}/>:<Auth/>}/>
-      <Route path='/products' element={<Products/>}/>
+      <Route path='/products/:id/:name' element={<Products/>}/>
       <Route path='/product-details/:id/:name' element={<ProductDetails/>}/>
       <Route path='/categories' element={<Categories/>}/>
       <Route path='/cart' element={!token?<Navigate to={'/auth'}/>:<Cart/>}/>
