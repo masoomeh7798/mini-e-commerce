@@ -11,7 +11,7 @@ import Cart from './Pages/Cart'
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
 import { Toaster } from 'react-hot-toast'
-import { CssBaseline } from '@mui/material'
+import { Box, CssBaseline } from '@mui/material'
 import { useSelector } from 'react-redux'
 
 
@@ -22,6 +22,7 @@ export default function App() {
     <>
     <CssBaseline/>
     <Navbar/>
+    <Box minHeight={'80vh'}>
     <Routes>
       <Route exact path='/' element={<Home/>}/>
       <Route path='/about' element={<About/>}/>
@@ -32,6 +33,7 @@ export default function App() {
       <Route path='/cart' element={!token?<Navigate to={'/auth'}/>:<Cart/>}/>
       <Route path='*' element={<NotFound/>}/>
     </Routes>
+      </Box>
     <Footer/>
     <Toaster/>
     </>
